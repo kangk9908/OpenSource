@@ -8,7 +8,20 @@
 
 <!-- login section -->
 <section>
-  <div id="login">
-    <h1>Login</h1>
-  </div>
+  <h1>Login</h1>
+
+  <form>
+    <label for="userNameOrEmail">Username or email</label><br />
+    <input
+      id="userNameOrEmail"
+      type="text"
+      [formControl]="userNameOrEmail"
+    /><br />
+    <label for="passphrase">Passphrase</label><br />
+    <input id="passphrase" type="password" [formControl]="passphrase" /><br />
+    <input type="submit" value="Submit" />
+
+    <!-- Value: {{userNameOrEmail.value}} -->
+    <!-- Value: {{passphrase.value}} -->
+  </form>
 </section>

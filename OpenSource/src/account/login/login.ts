@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   title = 'Login';
+
+  userNameOrEmail = new FormControl('');
+  passphrase = new FormControl('');
 }
