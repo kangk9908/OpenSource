@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class LoginComponent {
   title = 'Login';
+  hide = false;
 
   userNameOrEmail = new FormControl('');
   passphrase = new FormControl('');

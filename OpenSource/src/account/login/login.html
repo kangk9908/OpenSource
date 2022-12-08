@@ -8,20 +8,47 @@
 
 <!-- login section -->
 <section>
-  <h1>Login</h1>
+  <mat-card id="login-card">
+    <mat-card-header><h1 id="login-card-header">Login</h1></mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Username or Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter username"
+            type="text"
+            [formControl]="userNameOrEmail"
+          />
+        </mat-form-field>
 
-  <form>
-    <label for="userNameOrEmail">Username or email</label><br />
-    <input
-      id="userNameOrEmail"
-      type="text"
-      [formControl]="userNameOrEmail"
-    /><br />
-    <label for="passphrase">Passphrase</label><br />
-    <input id="passphrase" type="password" [formControl]="passphrase" /><br />
-    <input type="submit" value="Submit" />
+        <br />
 
-    <!-- Value: {{userNameOrEmail.value}} -->
-    <!-- Value: {{passphrase.value}} -->
-  </form>
+        <mat-form-field appearance="fill">
+          <mat-label>Passphrase</mat-label>
+          <input
+            matInput
+            type="passphrase"
+            [formControl]="passphrase"
+            placeholder="Enter password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions><button mat-button>Submit</button></mat-card-actions>
+  </mat-card>
+
+  <!-- <input type="submit" value="Submit" /> -->
+
+  <!-- Value: {{userNameOrEmail.value}} -->
+  <!-- Value: {{passphrase.value}} -->
 </section>
