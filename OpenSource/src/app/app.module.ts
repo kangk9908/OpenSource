@@ -21,6 +21,7 @@ import { environment } from '../../environments/environment'
 
 // Auth service
 import { AuthService } from './shared/services/auth';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, routingComponents],
@@ -41,6 +42,7 @@ import { AuthService } from './shared/services/auth';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    NgbModule,
   ],
 
   // passing AuthService class into providers array

@@ -1,42 +1,67 @@
-<!-- nav bar -->
-<nav>
-  <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
-  <button mat-button routerLink="/sign-up" routerLinkActive="active">
+<!-- ========================================================================== -->
+
+<!-- navbar -->
+<div class="navbar navbar-dark bg-dark">
+  <a class="nav-item btn btn-dark" routerLink="/home" routerLinkActive="active">
+    Home
+  </a>
+  <a
+    class="nav-item btn btn-dark"
+    routerLink="/sign-up"
+    routerLinkActive="active"
+  >
     Sign Up
-  </button>
-</nav>
+  </a>
+</div>
+
+<div id="login-card-header">
+  <h1>OpenSource</h1>
+</div>
 
 <!-- login section -->
-<section>
-  <mat-card id="login-card">
-    <mat-card-header>
-      <h1 id="login-card-header">Login</h1>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <mat-form-field appearance="outline">
-          <mat-label>Username or Email</mat-label>
-          <input matInput placeholder="Enter username" type="text" class="formControl" #username required/>
-        </mat-form-field>
+<div class="card" id="login-card">
+  <div class="card-body">
+    <form action="">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email address"
+          #username
+          required
+        />
+        <label>Email address</label>
+      </div>
 
-        <br />
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="passphrase"
+          #password
+          required
+        />
+        <label>Passphrase</label>
+      </div>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Passphrase</mat-label>
-          <input matInput placeholder="Enter password" type="passphrase" class="formControl" #password required/>
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <span routerLink="/recover-account">Forgot Password?</span>
-    <mat-card-actions><button mat-button (click)="authService.SignIn(username.value, password.value)">Submit</button></mat-card-actions>
-  </mat-card>
+      <div id="submit-btn">
+        <button
+          class="btn btn-dark"
+          (click)="authService.SignIn(username.value, password.value)"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
-  <!-- <input type="submit" value="Submit" /> -->
-
-  <!-- Value: {{userNameOrEmail.value}} -->
-  <!-- Value: {{passphrase.value}} -->
-</section>
+<!-- Sign Up and Password Recovery -->
+<div id="grid-container">
+  <div id="row1">
+    <a routerLink="/recover-account">Forgot passphrase?</a>
+  </div>
+  <div id="row2">
+    Don't have an account <a routerLink="/sign-up">Sign Up.</a>
+  </div>
+</div>
