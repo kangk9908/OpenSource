@@ -14,21 +14,11 @@
   <div class="container">
     <div class="row g-3 justify-content-center">
       <div class="form-floating mb-3 col-5">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="First Name"
-          [formControl]="firstName"
-        />
+        <input type="text" class="form-control" placeholder="First Name" />
         <label>First Name</label>
       </div>
       <div class="form-floating mb-3 col-5">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Last Name"
-          [formControl]="lastName"
-        />
+        <input type="text" class="form-control" placeholder="Last Name" />
         <label>Last Name</label>
       </div>
     </div>
@@ -41,26 +31,17 @@
           type="email"
           class="form-control"
           placeholder="email address"
-          [formControl]="email"
+          #email
+          required
         />
         <label>Email address</label>
       </div>
       <div class="form-floating mb-3 col-5">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Major"
-          [formControl]="major"
-        />
+        <input type="text" class="form-control" placeholder="Major" />
         <label>Major</label>
       </div>
       <div class="form-floating mb-3 col-5">
-        <input
-          type="date"
-          class="form-control"
-          placeholder="Graduation Date"
-          [formControl]="gradDate"
-        />
+        <input type="date" class="form-control" placeholder="Graduation Date" />
         <label>Graduation Date</label>
       </div>
       <div class="form-floating mb-3 col-5">
@@ -68,13 +49,24 @@
           type="password"
           class="form-control"
           placeholder="passphrase"
-          [formControl]="passphrase"
+          #password
+          required
         />
         <label>Passphrase</label>
       </div>
       <div id="submit-btn">
-        <button class="btn btn-dark col-4" type="button">Sign Up</button>
+        <button
+          class="btn btn-dark col-4"
+          type="button"
+          (click)="authService.SignUp(email.value, password.value)"
+        >
+          Sign Up
+        </button>
       </div>
     </div>
   </div>
+  <span
+    >Already have an account?
+    <span class="redirect" routerLink="/login">Log In</span></span
+  >
 </div>

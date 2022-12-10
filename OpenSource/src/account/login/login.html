@@ -26,6 +26,7 @@
           class="form-control"
           placeholder="email address"
           [formControl]="userNameOrEmail"
+          #username required
         />
         <label>Email address</label>
       </div>
@@ -35,24 +36,27 @@
           class="form-control"
           placeholder="passphrase"
           [formControl]="passphrase"
+          #password required
         />
         <label>Passphrase</label>
       </div>
+      <span routerLink="/recover-account">Forgot Password?</span>
       <div id="submit-btn">
-        <input class="btn btn-dark" type="submit" value="Log In" />
+        <button class="btn btn-dark" (click)="authService.SignIn(username.value, password.value)">Submit<button/>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Sign Up and Password Recovery -->
-<div id="grid-container">
-  <div id="row1">
-    <a routerLink="/recover-account">Forgot passphrase?</a>
+  <!-- Sign Up and Password Recovery -->
+  <div id="grid-container">
+    <div id="row1">
+      <a routerLink="/recover-account">Forgot passphrase?</a>
+    </div>
+    <div id="row2">
+      Don't have an account <a routerLink="/sign-up">Sign Up.</a>
+    </div>
   </div>
-  <div id="row2">
-    Don't have an account <a routerLink="/sign-up">Sign Up.</a>
-  </div>
-</div>
 
-<!-- Value: {{userNameOrEmail.value}} Value: {{passphrase.value}} -->
+  <!-- Value: {{userNameOrEmail.value}} Value: {{passphrase.value}} -->
+</section>
