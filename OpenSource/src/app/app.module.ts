@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ProjectListComponent } from '../project/project_list'
 
 // Firebase services + environment module
 // source "Set Up Firebase Packages" : https://www.positronx.io/full-angular-firebase-authentication-system/
@@ -24,7 +26,7 @@ import { AuthService } from './shared/services/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, ProjectListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,6 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
+    MatExpansionModule,
 
     // Firebase services + environment module
     // source "Set Up Firebase Packages" : https://www.positronx.io/full-angular-firebase-authentication-system/
