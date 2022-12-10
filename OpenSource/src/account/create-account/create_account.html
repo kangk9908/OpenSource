@@ -1,29 +1,80 @@
-<button mat-button routerLink="/home" routerLinkActive="active">Home</button>
-<button mat-button routerLink="/" routerLinkActive="active">Login</button>
+<!-- nav bar -->
+<div class="navbar navbar-dark bg-dark">
+  <a class="nav-item btn btn-dark" routerLink="/home" routerLinkActive="active">
+    Home
+  </a>
+  <a class="nav-item btn btn-dark" routerLink="/" routerLinkActive="active">
+    Log In
+  </a>
+</div>
 
-<h1>Sign Up</h1>
-<div>
-  <form>
-    <label for="firstName">First Name</label><br />
-    <input id="firstName" type="text" [formControl]="firstName" /><br />
+<div id="login-card">
+  <h1>Sign Up</h1>
 
-    <label for="lastName">Last Name</label><br />
-    <input id="lastName" type="text" [formControl]="lastName" /><br />
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          [formControl]="firstName"
+        />
+        <label>First Name</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          [formControl]="lastName"
+        />
+        <label>Last Name</label>
+      </div>
+    </div>
+  </div>
 
-    <label for="email">Email Address</label><br />
-    <input id="email" type="email" [formControl]="email" /><br />
-
-    <label for="major">Major</label><br />
-    <input id="major" type="text" [formControl]="major" /><br />
-
-    <label for="gradDate">Graduation Date</label><br />
-    <input id="gradDate" type="date" [formControl]="gradDate" /><br />
-
-    <label for="passphrase">Passphrase</label><br />
-    <input id="passphrase" type="password" [formControl]="passphrase" /><br />
-    <input type="submit" value="Create Account" />
-
-    <!-- Value: {{userNameOrEmail.value}} -->
-    <!-- Value: {{passphrase.value}} -->
-  </form>
+  <div class="container">
+    <div class="row g-3 justify-content-center text-center">
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email address"
+          [formControl]="email"
+        />
+        <label>Email address</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Major"
+          [formControl]="major"
+        />
+        <label>Major</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Graduation Date"
+          [formControl]="gradDate"
+        />
+        <label>Graduation Date</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="passphrase"
+          [formControl]="passphrase"
+        />
+        <label>Passphrase</label>
+      </div>
+      <div id="submit-btn">
+        <button class="btn btn-dark col-4" type="button">Sign Up</button>
+      </div>
+    </div>
+  </div>
 </div>

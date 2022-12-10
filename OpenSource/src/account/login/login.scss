@@ -1,8 +1,28 @@
 #login-card {
-    width: 50%;
-    margin: 10em auto auto auto;
+    width: 500px;
+    margin: auto;
 }
 
 #login-card-header {
     margin: auto
+}
+
+#grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#grid-container #row1 {
+    grid-row: 1 / 2;
+    margin: auto;
+    padding: 1em;
+}
+
+#grid-container #row2 {
+    grid-row: 2 / 3;
+    margin: auto;
+}
+
+#submit-btn {
+    margin: auto;
 }
