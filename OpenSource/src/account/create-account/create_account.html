@@ -1,0 +1,30 @@
+<button mat-button routerLink="/home" routerLinkActive="active">Home</button>
+<button mat-button routerLink="/" routerLinkActive="active">Login</button>
+
+<h1>Sign Up</h1>
+<div>
+  <form>
+    <!-- <label for="firstName">First Name</label><br />
+    <input id="firstName" type="text" [formControl]="firstName" /><br />
+
+    <label for="lastName">Last Name</label><br />
+    <input id="lastName" type="text" [formControl]="lastName" /><br /> -->
+
+    <label for="email">Email Address</label><br />
+    <input id="email" type="email" class="formControl" #email required /><br />
+
+    <!-- <label for="major">Major</label><br />
+    <input id="major" type="text" [formControl]="major" /><br />
+
+    <label for="gradDate">Graduation Date</label><br />
+    <input id="gradDate" type="date" [formControl]="gradDate" /><br /> -->
+
+    <label for="passphrase">Passphrase</label><br />
+    <input id="passphrase" type="password" class="formControl" #password required /><br />
+    <input type="submit" value="Create Account" (click)="authService.SignUp(email.value, password.value)" />
+    <span>Already have an account?
+      <span class="redirect" routerLink="/login">Log In</span></span>
+    <!-- Value: {{userNameOrEmail.value}} -->
+    <!-- Value: {{passphrase.value}} -->
+  </form>
+</div>
