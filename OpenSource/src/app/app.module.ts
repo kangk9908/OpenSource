@@ -9,9 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ProjectListComponent } from 'src/project/project_list'
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, ProjectListComponent, routingComponents],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,8 +24,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
+    MatDialogModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+}

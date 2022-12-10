@@ -1,0 +1,15 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Project Title: {{projTitle}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Click to {{panelOpenState ? 'see less' : 'learn more'}}
+
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Project Description: {{projDesc}}</p>
+        <p><button mat-raised-button color="accent">Join Project</button></p>
+    </mat-expansion-panel>
+</mat-accordion>
