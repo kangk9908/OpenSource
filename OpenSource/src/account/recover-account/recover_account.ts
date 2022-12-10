@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+
+// Auth Service
+import { AuthService } from '../../app/shared/services/auth'
 
 @Component({
   selector: 'app-recover-account',
@@ -6,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recover_account.scss'],
 })
 export class RecoverAccountComponent implements OnInit {
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }

@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core'
+import { FormControl } from '@angular/forms'
+
+import { AuthService } from '../../app/shared/services/auth'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
   styleUrls: ['./login.scss'],
 })
-export class LoginComponent {
-  title = 'Login';
-  hide = false;
+export class LoginComponent implements OnInit {
+  title = 'Login'
+  hide = false
 
-  userNameOrEmail = new FormControl('');
-  passphrase = new FormControl('');
+  constructor(public authService: AuthService) {}
+  ngOnInit() {}
 }
