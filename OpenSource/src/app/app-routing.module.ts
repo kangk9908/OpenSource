@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 // pages
-import { LoginComponent } from 'src/account/login/login'
-import { PageNotFoundComponent } from 'src/account/page-not-found/page_not_found'
-import { HomeComponent } from 'src/account/home/home.component'
-import { DevsComponent } from 'src/devs-page/devs.component'
-import { CreateAccountComponent } from 'src/account/create-account/create_account'
-import { RecoverAccountComponent } from 'src/account/recover-account/recover_account'
-import { UpdateAccountComponent } from 'src/account/update-account/update_account'
-import { VerifyEmailComponent } from 'src/account/verify-email/verify-email.component'
+import { LoginComponent } from 'src/account/login/login';
+import { PageNotFoundComponent } from 'src/account/page-not-found/page_not_found';
+import { HomeComponent } from 'src/account/home/home.component';
+import { DevsComponent } from 'src/devs-page/devs.component';
+import { CreateAccountComponent } from 'src/account/sign-up/create_account';
+import { RecoverAccountComponent } from 'src/account/recover-account/recover_account';
+import { UpdateAccountComponent } from 'src/account/update-account/update_account';
+import { VerifyEmailComponent } from 'src/account/verify-email/verify-email.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'recover-account', component: RecoverAccountComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -36,4 +36,4 @@ export const routingComponents = [
   CreateAccountComponent,
   UpdateAccountComponent,
   RecoverAccountComponent,
-]
+];
