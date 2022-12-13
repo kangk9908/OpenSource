@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 // Auth Service
-import { AuthService } from '../../app/shared/services/auth'
+import { AuthService } from '../../app/shared/services/auth';
 
 @Component({
   selector: 'app-create-account',
-  templateUrl: './create_account.html',
-  styleUrls: ['./create_account.scss'],
+  templateUrl: './sign-up.html',
+  styleUrls: ['./sign-up.scss'],
 })
-export class CreateAccountComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   constructor(public authService: AuthService) {}
   ngOnInit() {}
 
