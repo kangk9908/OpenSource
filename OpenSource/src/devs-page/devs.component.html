@@ -1,40 +1,38 @@
-<button mat-button routerLink="/home" routerLinkActive="active">
-  Dashboard
-</button>
-<button mat-button routerLink="/devs" routerLinkActive="active">Devs</button>
-<button mat-button routerLink="/project" routerLinkActive="active">
-  Projects
-</button>
+<nav class="navbar navbar-dark bg-light justify-content-end">
+  <button mat-button routerLink="/home" routerLinkActive="active">
+    Dashboard
+  </button>
+  <button mat-button routerLink="/devs" routerLinkActive="active">Devs</button>
+  <button mat-button routerLink="/projects" routerLinkActive="active">
+    Posts
+  </button>
+</nav>
 
-<body>
-  <div class="card">
-    <div class="logo-div">
+<div class="container">
+  <div class="row gap-4">
+    <div class="card g-col-6" style="width: 18em">
       <img class="logo shadowed" src="../assets/pic.jpg" />
+      <div class="card-body">
+        <div class="card-title">Kun Kang</div>
+        <div class="subtitle">Student</div>
+        <button class="btn btn-dark">Find out more</button>
+      </div>
     </div>
-    <div class="title">Kun Kang</div>
-    <div class="subtitle">Student</div>
-    <button class="find-more-btn shadowed">Find out more</button>
-  </div>
-</body>
-
-<body>
-  <div class="card">
-    <div class="logo-div">
+    <div class="card g-col-6" style="width: 18em">
       <img class="logo shadowed" src="../assets/pic.jpg" />
+      <div class="card-body">
+        <div class="card-title">Ifeanyi Onyeanakwe</div>
+        <div class="subtitle">Student</div>
+        <button class="btn btn-dark">Find out more</button>
+      </div>
     </div>
-    <div class="title">Sean Ebenmelu</div>
-    <div class="subtitle">Student</div>
-    <button class="find-more-btn shadowed">Find out more</button>
-  </div>
-</body>
-
-<body>
-  <div class="card">
-    <div class="logo-div">
+    <div class="card g-col-6" style="width: 18em">
       <img class="logo shadowed" src="../assets/pic.jpg" />
+      <div class="card-body">
+        <div class="card-title">Sean Ebenmelu</div>
+        <div class="subtitle">Student</div>
+        <button class="btn btn-dark">Find out more</button>
+      </div>
     </div>
-    <div class="title">Ifeanyichukwu Onyeanakwe</div>
-    <div class="subtitle">Student</div>
-    <button class="find-more-btn shadowed">Find out more</button>
   </div>
-</body>
+</div>

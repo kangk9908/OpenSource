@@ -1,25 +1,25 @@
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { ReactiveFormsModule } from '@angular/forms'
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module'
-import { AppComponent } from './app.component'
-import { MatButtonModule } from '@angular/material/button'
-import { MatCardModule } from '@angular/material/card'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatIconModule } from '@angular/material/icon'
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ProjectListComponent } from '../project/project_list'
+import { ProjectListComponent } from './components/project/project_list';
 
 // Firebase services + environment module
 // source "Set Up Firebase Packages" : https://www.positronx.io/full-angular-firebase-authentication-system/
-import { AngularFireModule } from '@angular/fire/compat'
-import { AngularFireAuthModule } from '@angular/fire/compat/auth'
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database'
-import { environment } from '../../environments/environment'
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../../environments/environment';
 
 // Auth service
 import { AuthService } from './shared/services/auth';
