@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
   { path: 'community-posts', component: CommunityPostsComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
 ];
 
@@ -36,4 +36,5 @@ export const routingComponents = [
   SignUpComponent,
   RecoverAccountComponent,
   CommunityPostsComponent,
+  VerifyEmailComponent,
 ];
