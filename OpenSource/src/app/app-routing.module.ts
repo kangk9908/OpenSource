@@ -9,14 +9,16 @@ import { DevsComponent } from 'src/devs-page/devs.component';
 import { SignUpComponent } from 'src/account/sign-up/sign-up';
 import { RecoverAccountComponent } from 'src/account/recover-account/recover_account';
 import { VerifyEmailComponent } from 'src/account/verify-email/verify-email.component';
+import { CommunityPostsComponent } from './community-posts/community-posts.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
+  { path: 'sign-in', component: LoginComponent },
+  { path: 'dashboard', component: HomeComponent },
   { path: 'devs', component: DevsComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
+  { path: 'community-posts', component: CommunityPostsComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
 ];
@@ -33,4 +35,5 @@ export const routingComponents = [
   DevsComponent,
   SignUpComponent,
   RecoverAccountComponent,
+  CommunityPostsComponent,
 ];
