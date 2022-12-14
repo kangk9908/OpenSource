@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // pages
-import { LoginComponent } from 'src/account/login/login';
+import { LoginComponent } from 'src/account/sign-in/login';
 import { PageNotFoundComponent } from 'src/account/page-not-found/page_not_found';
 import { HomeComponent } from 'src/account/home/home.component';
 import { DevsComponent } from 'src/devs-page/devs.component';
 import { SignUpComponent } from 'src/account/sign-up/sign-up';
 import { RecoverAccountComponent } from 'src/account/recover-account/recover_account';
-import { UpdateAccountComponent } from 'src/account/update-account/update_account';
 import { VerifyEmailComponent } from 'src/account/verify-email/verify-email.component';
 
 const routes: Routes = [
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'devs', component: DevsComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'update', component: UpdateAccountComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
@@ -34,6 +32,5 @@ export const routingComponents = [
   HomeComponent,
   DevsComponent,
   SignUpComponent,
-  UpdateAccountComponent,
   RecoverAccountComponent,
 ];
