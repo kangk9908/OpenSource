@@ -1,0 +1,56 @@
+<!-- navbar -->
+
+<div class="navbar navbar-dark bg-dark">
+  <a class="nav-item btn btn-dark" routerLink="/dashboard" routerLinkActive="active">
+    Home
+  </a>
+  <a class="nav-item btn btn-dark" routerLink="/" routerLinkActive="active">
+    Log In
+  </a>
+</div>
+
+<div id="login-card">
+  <h1>Sign Up</h1>
+
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+      <div class="form-floating mb-3 col-5">
+        <input type="text" class="form-control" placeholder="First Name" />
+        <label>First Name</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input type="text" class="form-control" placeholder="Last Name" />
+        <label>Last Name</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row g-3 justify-content-center text-center">
+      <div class="form-floating mb-3 col-5">
+        <input type="email" class="form-control" placeholder="email address" #email required />
+        <label>Email address</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input type="text" class="form-control" placeholder="Major" />
+        <label>Major</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input type="date" class="form-control" placeholder="Graduation Date" />
+        <label>Graduation Date</label>
+      </div>
+      <div class="form-floating mb-3 col-5">
+        <input type="password" class="form-control" placeholder="passphrase" #password required />
+        <label>Passphrase</label>
+      </div>
+      <div id="submit-btn">
+        <button class="btn btn-dark col-4" type="button" (click)="authService.SignUp(email.value, password.value)">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+  <span>Already have an account?
+    <a class="redirect" routerLink="/sign-in" href="">Log In</a>
+  </span>
+</div>

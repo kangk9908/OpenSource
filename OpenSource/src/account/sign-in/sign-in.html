@@ -1,0 +1,45 @@
+<!-- ========================================================================== -->
+
+<!-- navbar -->
+<div class="navbar navbar-dark bg-dark justify-content-end">
+  <a class="nav-item btn btn-dark" routerLink="/sign-up" routerLinkActive="active">
+    Sign Up
+  </a>
+</div>
+
+<div id="login-card-header">
+  <h1>OpenSource</h1>
+</div>
+
+<!-- login section -->
+<div class="card" id="login-card">
+  <div class="card-body">
+    <form action="">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" placeholder="email address" #email required />
+        <label>Email address</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" placeholder="passphrase" #password required />
+        <label>Passphrase</label>
+      </div>
+
+      <div id="submit-btn">
+        <button class="btn btn-dark" (click)="authService.SignIn(email.value, password.value)">
+          This one
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Sign Up and Password Recovery -->
+<div id="grid-container">
+  <div id="row1">
+    <a routerLink="/recover-account">Forgot passphrase?</a>
+  </div>
+  <div id="row2">
+    Don't have an account <a routerLink="/sign-up">Sign Up.</a>
+  </div>
+</div>
