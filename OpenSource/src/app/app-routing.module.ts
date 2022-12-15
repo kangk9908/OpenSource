@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
   { path: 'community-posts', component: CommunityPostsComponent, canActivate:[AuthGuard] },
-  { path: 'verify-email', component: VerifyEmailComponent , canActivate:[AuthGuard]},
+  { path: 'verify-email', component: VerifyEmailComponent},
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
 ];
 

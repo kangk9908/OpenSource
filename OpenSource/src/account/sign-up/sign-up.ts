@@ -14,7 +14,7 @@ import { Observable } from 'rxjs'
   styleUrls: ['./sign-up.scss'],
 })
 export class SignUpComponent implements OnInit {
-  downloadURL!: Observable<any>
+  // downloadURL!: Observable<any>
   constructor(
     public authService: AuthService,
     private storage: AngularFireStorage,
@@ -22,19 +22,19 @@ export class SignUpComponent implements OnInit {
   ) {}
   // uploading file to angular firestorage
   // source: "Foundation of a file upload" https://blog.angular.io/file-uploads-come-to-angularfire-6842352b3b47
-  uploadFile(event: any) {
-    const file = event.target.files[0]
-    const filePath = 'name-your-file-path-here'
-    const fileRef = this.storage.ref(filePath)
-    const task = this.storage.upload(filePath, file)
+  // uploadFile(event: any) {
+  //   const file = event.target.files[0]
+  //   const filePath = 'name-your-file-path-here'
+  //   const fileRef = this.storage.ref(filePath)
+  //   const task = this.storage.upload(filePath, file)
 
-    // observe percentage changes
-    // get notified when the download URL is available
-    task
-      .snapshotChanges()
-      .pipe(finalize(() => (this.downloadURL = fileRef.getDownloadURL())))
-      .subscribe()
-    console.log(fileRef.getDownloadURL())
-  }
+  //   // observe percentage changes
+  //   // get notified when the download URL is available
+  //   task
+  //     .snapshotChanges()
+  //     .pipe(finalize(() => (this.downloadURL = fileRef.getDownloadURL())))
+  //     .subscribe()
+  //   console.log(fileRef.getDownloadURL())
+  // }
   ngOnInit() {}
 }
