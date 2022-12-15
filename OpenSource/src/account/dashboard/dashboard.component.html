@@ -15,43 +15,43 @@
         <h3>{{user.email}}</h3>
 
       </div>
-    </div>
-    <div class="bg-light" id="right-pane">
-      <!-- navigation -->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
-            type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
-            My Projects
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
-            type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
-            My Account
-          </button>
-        </li>
-      </ul>
-      <div class="tab-content text-center some-padding" id="myTabContent">
-        <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
-          <p>
-            <app-project_list [projTitle]="projTitle" [projDesc]="projDesc"></app-project_list>
-          </p>
+      <div class="bg-light" id="right-pane">
+        <!-- navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
+              type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
+              My Projects
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
+              type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
+              My Account
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
+            <p *ngFor="let proj of projLog">
+              <app-project_list [projName]="proj.projName" [projDesc]="proj.projDesc"></app-project_list>
+            </p>
 
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Create Project
-          </button>
-        </div>
-        <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
-          <div class="row" *ngIf="authService.userData as user">
-            <div class="col-md-12">
-              <div class="media">
-                <div class="media-body">
-                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
-                  <p>Email: <strong>{{user.email}}</strong></p>
-                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="makeProj()">
+              Create Project
+            </button>
+          </div>
+          <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
+            <div class="row" *ngIf="authService.userData as user">
+              <div class="col-md-12">
+                <div class="media">
+                  <div class="media-body">
+                    <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                    <p>User ID: <strong>{{user.uid}}</strong></p>
+                    <p>Email: <strong>{{user.email}}</strong></p>
+                    <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                  </div>
                 </div>
               </div>
             </div>
