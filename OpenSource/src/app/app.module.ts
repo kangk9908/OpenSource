@@ -19,7 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 // Auth service
 import { AuthService } from './shared/services/auth';
