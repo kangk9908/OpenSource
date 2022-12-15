@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 // firestorage for file upload
-import { AngularFireStorage } from '@angular/fire/compat/storage'
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 // Auth Service
-import { AuthService } from '../../app/shared/services/auth'
-import { AngularFirestore } from '@angular/fire/compat/firestore'
-import { finalize } from 'rxjs/operators'
-import { Observable } from 'rxjs'
+import { AuthService } from '../../app/shared/services/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-account',
@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private storage: AngularFireStorage,
-    public firestore: AngularFirestore,
+    public firestore: AngularFirestore
   ) {}
   // uploading file to angular firestorage
   // source: "Foundation of a file upload" https://blog.angular.io/file-uploads-come-to-angularfire-6842352b3b47

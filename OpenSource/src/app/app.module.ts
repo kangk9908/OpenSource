@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,6 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../../environments/environment';
-
 // Auth service
 import { AuthService } from './shared/services/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -37,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatFormFieldModule,
     MatIconModule,
     MatExpansionModule,
-
+    FormsModule,
     // Firebase services + environment module
     // source "Set Up Firebase Packages" : https://www.positronx.io/full-angular-firebase-authentication-system/
     AngularFireModule.initializeApp(environment.firebase),
