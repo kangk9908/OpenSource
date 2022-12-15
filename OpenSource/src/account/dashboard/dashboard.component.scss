@@ -4,7 +4,7 @@
 
 #left-pane {
     display: grid;
-    grid-template-columns: 20vw 2vw;
+    grid-template-columns: 20vw 60vw;
     grid-column: 1 / 2;
 }
 
@@ -26,4 +26,8 @@
 h1 {
     font: 2em sans-serif;
 
+}
+
+.some-padding {
+    padding: 10em;
 }
