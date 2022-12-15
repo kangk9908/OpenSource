@@ -1,5 +1,14 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
+import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { AuthService } from 'src/app/shared/services/auth'
+
+interface Item {
+  projName: string
+  projDesc: string
+  progLang: string
+  specInstr: string
+  timestamp: firebase.default.firestore.Timestamp
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +16,13 @@ import { AuthService } from 'src/app/shared/services/auth'
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  projTitle = 'Whatever you want baby!'
-  projDesc = 'Really fun Prof. Norman Project'
-  imgs = ''
-  constructor(public authService: AuthService) {}
+  projLog: Array<Item> = []
+  constructor(public authService: AuthService, private db: AngularFirestore) {
+    db.collection<Item>('/project', (ref) => ref.orderBy('timestamp'))
+      .valueChanges()
+      .subscribe((res) => {
+        this.projLog = res
+      })
+  }
   ngOnInit() {}
 }

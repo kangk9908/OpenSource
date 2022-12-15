@@ -34,12 +34,12 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
-            <p>
-              <app-project_list [projTitle]="projTitle" [projDesc]="projDesc"></app-project_list>
+            <p *ngFor="let proj of projLog">
+              <app-project_list [projName]="proj.projName" [projDesc]="proj.projDesc"></app-project_list>
             </p>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="makeProj()">
               Create Project
             </button>
           </div>
@@ -56,8 +56,6 @@
                 </div>
               </div>
             </div>
-
-            <button class="btn btn-danger">Delete Account</button>
           </div>
         </div>
       </div>
