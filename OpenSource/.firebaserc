@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "opensource-ac4a5": {
+      "hosting": {
+        "OpenSource": [
+          "opensource-ac4a5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "opensource-ac4a5"
+  }
+}
