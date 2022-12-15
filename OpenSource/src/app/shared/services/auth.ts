@@ -58,7 +58,6 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail()
         this.SetUserData(result.user)
-        // this.setMajor(major)
       })
       .catch((error) => {
         window.alert(error.message)
@@ -89,11 +88,6 @@ export class AuthService {
     return user !== null && user.emailVerified !== false ? true : false
   }
 
-  // setMajor(major: string) {
-  //   const user = JSON.parse(localStorage.getItem('user')!)
-  //   const setMajor = this.afs.collection('users').valueChanges({'major': major})
-  //   return setMajor
-  // }
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
@@ -107,8 +101,6 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      // major: user.major,
-      // gradDate: user.gradDate
     }
     return userRef.set(userData, {
       merge: true,
