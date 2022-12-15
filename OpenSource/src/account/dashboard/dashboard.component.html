@@ -2,7 +2,6 @@
   <button class="btn btn-dark" (click)="authService.SignOut()">Sign Out</button>
 </nav>
 
-
 <div>
   <div style="  background-image: linear-gradient( #212529, black); ">
     <!-- add profile picture -->
@@ -15,49 +14,53 @@
         <h3>{{user.email}}</h3>
 
       </div>
-      <div class="bg-light" id="right-pane">
-        <!-- navigation -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
-              type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
-              My Projects
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
-              type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
-              My Account
-            </button>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
-            <p *ngFor="let proj of projLog">
-              <app-project_list [projName]="proj.projName" [projDesc]="proj.projDesc"></app-project_list>
-            </p>
+    </div>
+    <div class="bg-light " id="right-pane">
+      <!-- navigation -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
+            type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
+            My Projects
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
+            type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
+            My Account
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content text-center" id="myTabContent">
+        <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="makeProj()">
-              Create Project
-            </button>
-          </div>
-          <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
-            <div class="row" *ngIf="authService.userData as user">
-              <div class="col-md-12">
-                <div class="media">
-                  <div class="media-body">
-                    <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                    <p>User ID: <strong>{{user.uid}}</strong></p>
-                    <p>Email: <strong>{{user.email}}</strong></p>
-                    <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-                  </div>
+          <!-- display projects -->
+          <p *ngFor="let proj of projLog">
+            <app-project_list [projName]="proj.projName" [projDesc]="proj.projDesc" [progLang]="proj.progLang"
+              [specInstr]="proj.specInstr"></app-project_list>
+          </p>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="makeProj()">
+            Create Project
+          </button>
+        </div>
+        <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <div class="media-body">
+                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                  <p>User ID: <strong>{{user.uid}}</strong></p>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </div>
@@ -75,15 +78,16 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="projectName" class="form-label">Project Name</label>
-          <input type="email" class="form-control" id="projectName" placeholder="hello world" />
+          <input [(ngModel)]="projName" type="email" class="form-control" id="projectName" placeholder="hello world" />
         </div>
         <div class="mb-3">
           <label for="projDescr" class="form-label">Project Description</label>
-          <textarea class="form-control" id="projDescr" rows="3"></textarea>
+          <textarea [(ngModel)]="projDesc" class="form-control" id="projDescr" rows="3"></textarea>
         </div>
 
         <label for="programList" class="form-label">Program Language</label>
-        <input class="form-control" list="progLangOptions" id="programList" placeholder="Type to search..." />
+        <input [(ngModel)]="projLang" class="form-control" list="progLangOptions" id="programList"
+          placeholder="Type to search..." />
         <datalist id="progLangOptions">
           <option value="Java"></option>
           <option value="Javascript"></option>
@@ -104,7 +108,7 @@
         <br />
         <div class="mb-3">
           <label for="instructions" class="form-label">Special Instructions</label>
-          <textarea class="form-control" id="instructions" rows="3"></textarea>
+          <textarea [(ngModel)]="projSpec" class="form-control" id="instructions" rows="3"></textarea>
         </div>
       </div>
 
@@ -112,7 +116,7 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Publish</button>
+        <button (click)="makeProj()" type="button" class="btn btn-primary">Publish</button>
       </div>
     </div>
   </div>
