@@ -17,12 +17,12 @@ import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'devs', component: DevsComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'devs', component: DevsComponent, canActivate:[AuthGuard] },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
-  { path: 'community-posts', component: CommunityPostsComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'community-posts', component: CommunityPostsComponent, canActivate:[AuthGuard] },
+  { path: 'verify-email', component: VerifyEmailComponent , canActivate:[AuthGuard]},
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
 ];
 

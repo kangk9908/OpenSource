@@ -15,12 +15,11 @@
   <div class="container">
     <div class="row g-3 justify-content-center">
       <div class="form-floating mb-3 col-5">
-        <input type="text" class="form-control" placeholder="First Name" />
-        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First & Last Name" />
+        <label>First & Last Name</label>
       </div>
       <div class="form-floating mb-3 col-5">
-        <input type="text" class="form-control" placeholder="Last Name" />
-        <label>Last Name</label>
+        <input class="form-control" type="file" (change)="uploadFile($event)" accept=".png,.jpg"/>
       </div>
     </div>
   </div>
