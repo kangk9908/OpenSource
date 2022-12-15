@@ -1,3 +1,29 @@
 #grid-container {
 
 }
+
+#left-pane {
+    display: grid;
+    grid-template-columns: 20vw 2vw;
+    grid-column: 1 / 2;
+}
+
+#profile {
+    width: 18em;
+    margin-left: 10em;
+    margin-bottom: 2em;
+}
+
+#header-section {
+    display: inline;
+    margin-right: 0;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin:auto;
+    padding-left: 25em;
+}
+
+h1 {
+    font: 2em sans-serif;
+
+}

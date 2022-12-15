@@ -1,120 +1,122 @@
-<nav class="navbar navbar-dark bg-light justify-content-end">
-  <button mat-button (click)="authService.SignOut()">Sign Out</button>
+<nav class="navbar navbar-dark bg-dark justify-content-end">
+  <button class="btn btn-dark" (click)="authService.SignOut()">Sign Out</button>
 </nav>
 
-<div id="header-section">
-  <h1>Welcome Back...</h1>
-</div>
+<div>
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col-6" id="left-pane">
+  <div>
+    <div style="  background-image: linear-gradient( #212529, black); ">
       <!-- add profile picture -->
-      <div class="card" style="width: 18rem" *ngIf="authService.userData as user">
-        <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+      <div id="left-pane" style="width: 18rem" *ngIf="authService.userData as user">
+        <img class="align-self-start mr-5 img-thumbnail rounded-circle" id="profile"
           src="{{(user.photoURL) ? user.photoURL : '/assets/pic.jpg'}}" alt="{{user.displayName}}">
-        <h3>{{user.email}}</h3>
-      </div>
-    </div>
-    <div class="col-6" id="right-pane">
-      <!-- navigation -->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
-            type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
-            My Projects
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
-            type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
-            My Account
-          </button>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
-          <p>
-            <app-project_list [projTitle]="projTitle" [projDesc]="projDesc"></app-project_list>
-          </p>
-
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Create Project
-          </button>
+        <!-- <h3 class="text-light"></h3> -->
+        <div class="text-light" id="header-section">
+          <h1>Welcome Back</h1>
+          <h1>{{user.email}}</h1>
         </div>
-        <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
-          <div class="row" *ngIf="authService.userData as user">
-            <div class="col-md-12">
-              <div class="media">
-                <div class="media-body">
-                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
-                  <p>Email: <strong>{{user.email}}</strong></p>
-                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+      </div>
+      <div class="bg-light" id="right-pane">
+        <!-- navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane"
+              type="button" role="tab" aria-controls="project-tab-pane" aria-selected="false">
+              My Projects
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane"
+              type="button" role="tab" aria-controls="account-tab-pane" aria-selected="false">
+              My Account
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
+            <p>
+              <app-project_list [projTitle]="projTitle" [projDesc]="projDesc"></app-project_list>
+            </p>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Create Project
+            </button>
+          </div>
+          <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
+            <div class="row" *ngIf="authService.userData as user">
+              <div class="col-md-12">
+                <div class="media">
+                  <div class="media-body">
+                    <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                    <p>User ID: <strong>{{user.uid}}</strong></p>
+                    <p>Email: <strong>{{user.email}}</strong></p>
+                    <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <button class="btn btn-danger">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New Project</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="email" class="form-control" id="projectName" placeholder="hello world" />
+          </div>
+          <div class="mb-3">
+            <label for="projDescr" class="form-label">Project Description</label>
+            <textarea class="form-control" id="projDescr" rows="3"></textarea>
           </div>
 
-          <button class="btn btn-danger">Delete Account</button>
+          <label for="programList" class="form-label">Program Language</label>
+          <input class="form-control" list="progLangOptions" id="programList" placeholder="Type to search..." />
+          <datalist id="progLangOptions">
+            <option value="Java"></option>
+            <option value="Javascript"></option>
+            <option value="HTML/CSS"></option>
+            <option value="Go"></option>
+            <option value="C"></option>
+            <option value="C++"></option>
+            <option value="C#"></option>
+            <option value="Swift"></option>
+            <option value="PHP"></option>
+            <option value="Rust"></option>
+            <option value="Ruby"></option>
+            <option value="TypeScript"></option>
+            <option value="SQL"></option>
+            <option value="Python"></option>
+            <option value="Lua"></option>
+          </datalist>
+          <br />
+          <div class="mb-3">
+            <label for="instructions" class="form-label">Special Instructions</label>
+            <textarea class="form-control" id="instructions" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Publish</button>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New Project</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="projectName" class="form-label">Project Name</label>
-          <input type="email" class="form-control" id="projectName" placeholder="hello world" />
-        </div>
-        <div class="mb-3">
-          <label for="projDescr" class="form-label">Project Description</label>
-          <textarea class="form-control" id="projDescr" rows="3"></textarea>
-        </div>
-
-        <label for="programList" class="form-label">Program Language</label>
-        <input class="form-control" list="progLangOptions" id="programList" placeholder="Type to search..." />
-        <datalist id="progLangOptions">
-          <option value="Java"></option>
-          <option value="Javascript"></option>
-          <option value="HTML/CSS"></option>
-          <option value="Go"></option>
-          <option value="C"></option>
-          <option value="C++"></option>
-          <option value="C#"></option>
-          <option value="Swift"></option>
-          <option value="PHP"></option>
-          <option value="Rust"></option>
-          <option value="Ruby"></option>
-          <option value="TypeScript"></option>
-          <option value="SQL"></option>
-          <option value="Python"></option>
-          <option value="Lua"></option>
-        </datalist>
-        <br />
-        <div class="mb-3">
-          <label for="instructions" class="form-label">Special Instructions</label>
-          <textarea class="form-control" id="instructions" rows="3"></textarea>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Publish</button>
-      </div>
-    </div>
-  </div>
 </div>
