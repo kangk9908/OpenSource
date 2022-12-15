@@ -9,20 +9,17 @@ import { DevsComponent } from 'src/devs-page/devs.component';
 import { SignUpComponent } from 'src/account/sign-up/sign-up';
 import { RecoverAccountComponent } from 'src/account/recover-account/recover_account';
 import { VerifyEmailComponent } from 'src/account/verify-email/verify-email.component';
-import { CommunityPostsComponent } from './community-posts/community-posts.component';
-
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'devs', component: DevsComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'devs', component: DevsComponent, canActivate:[AuthGuard] },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'recover-account', component: RecoverAccountComponent },
-  { path: 'community-posts', component: CommunityPostsComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
+  { path: 'verify-email', component: VerifyEmailComponent},
   { path: '**', component: PageNotFoundComponent }, // must be at the end of the array
 ];
 
@@ -38,6 +35,5 @@ export const routingComponents = [
   DevsComponent,
   SignUpComponent,
   RecoverAccountComponent,
-  CommunityPostsComponent,
   VerifyEmailComponent,
 ];
